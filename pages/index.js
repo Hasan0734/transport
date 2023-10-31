@@ -60,12 +60,14 @@ export default LineChart;
 export async function getServerSideProps(context){
   try{
     await clientPromise
-
+    console.log('Helo world')
     return {
       props : {isConnected:true}
     }
   } catch (e){
     console.error(e)
+    console.log('Helo world 2')
+
     return{
       props : {isConnected: false}
     }
