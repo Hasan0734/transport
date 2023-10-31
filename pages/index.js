@@ -4,35 +4,53 @@ import clientPromise from "../lib/mongodb";
 const labels = ["January", "February", "March", "April", "May", "June"];
 
 export default function Home({ isConnected }) {
-  const [data, setData] = useState([
-    { _id: "trey", DATE: ["2023-10-19"], PRICE: ["100"] },
-  ]);
+  // const [data, setData] = useState([
+  //   { _id: "trey", DATE: ["2023-10-19"], PRICE: ["100"] },
+  // ]);
 
-  data[1]["PRICE"];
-  data[1]["DATE"];
+  // data[1]["PRICE"];
+  // data[1]["DATE"];
 
-  useEffect(() => {
-    (async () => {
-      const results = await fetch("api/list");
-      const resultsJson = await results.json();
-      setData(resultsJson);
-    })();
-  }, []);
+  // const getConnect = async () => {
+  //   try {
+  //     await clientPromise;
+  //     return {
+  //       props: { isConnected: true },
+  //     };
+  //   } catch (e) {
+  //     console.error(e);
+  //     return {
+  //       props: { isConnected: false },
+  //     };
+  //   }
+  // }
 
-  let kim = data[0]["DATE"];
-  let him = data[0]["PRICE"];
-  const pata = {
-    labels: kim,
-    datasets: [
-      {
-        label:
-          "Producer Price Index by Industry: Deep Sea Freight Transportation",
-        backgroundColor: "rgb(255, 99, 132)",
-        borderColor: "rgb(0,0,255)",
-        data: him,
-      },
-    ],
-  };
+  // useEffect(() => {
+  //   getConnect();
+    
+  //   (async () => {
+  //     const results = await fetch("api/list");
+  //     const resultsJson = await results.json();
+  //     setData(resultsJson);
+  //   })();
+  // }, []);
+
+  // let kim = data[0]["DATE"];
+  // let him = data[0]["PRICE"];
+  // const pata = {
+  //   labels: kim,
+  //   datasets: [
+  //     {
+  //       label:
+  //         "Producer Price Index by Industry: Deep Sea Freight Transportation",
+  //       backgroundColor: "rgb(255, 99, 132)",
+  //       borderColor: "rgb(0,0,255)",
+  //       data: him,
+  //     },
+  //   ],
+  // };
+
+  // console.log({pata})
 
   return (
     <div>
