@@ -57,18 +57,18 @@ let him = data[0]['PRICE']
 
 export default LineChart;
 
-export async function getServerSideProps(context){
-  try{
-    await clientPromise
-    return {
-      props : {isConnected:true}
-    }
-  } catch (e){
-    console.error(e)
-    return{
-      props : {isConnected: false}
-    }
-  }
+// export async function getServerSideProps(context){
+//   try{
+//     await clientPromise
+//     return {
+//       props : {isConnected:true}
+//     }
+//   } catch (e){
+//     console.error(e)
+//     return{
+//       props : {isConnected: false}
+//     }
+//   }
 
 
-}
+// }
