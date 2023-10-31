@@ -19,13 +19,13 @@ const LineChart = ({isConnected}) => {
     
 const [data, setData] = useState([{_id:'trey', DATE:['2023-10-19'], PRICE:['100']}]);
 
-  useEffect(() => {
-    (async () => {
-      const results = await fetch("api/list");
-      const resultsJson = await results.json();
-      setData(resultsJson);
-    })();
-  }, []);
+  // useEffect(() => {
+  //   (async () => {
+  //     const results = await fetch("api/list");
+  //     const resultsJson = await results.json();
+  //     setData(resultsJson);
+  //   })();
+  // }, []);
 
 let kim = data[0]['DATE']
 let him = data[0]['PRICE']
@@ -48,9 +48,9 @@ let him = data[0]['PRICE']
 
   return (
     <div className="h-96">
-      <Line data={pata} 
-                    />
-      
+      {/* <Line data={pata} 
+                    /> */}
+      <h2>Hello world!</h2>
     </div>
   );
 };
@@ -60,14 +60,11 @@ export default LineChart;
 export async function getServerSideProps(context){
   try{
     await clientPromise
-    console.log('Helo world')
     return {
       props : {isConnected:true}
     }
   } catch (e){
     console.error(e)
-    console.log('Helo world 2')
-
     return{
       props : {isConnected: false}
     }
