@@ -3,6 +3,7 @@ import React, { useEffect, useState } from "react";
 // import clientPromise from "../lib/mongodb";
 // import { Line } from "react-chartjs-2";
 // import Chart from "chart.js/auto";
+import ChartLine from '../components/ChartLine'
 
 const labels = ["January", "February", "March", "April", "May", "June"];
 
@@ -14,19 +15,19 @@ export default function Home({ isConnected }) {
   // data[1]['PRICE']
   // data[1]['DATE']
 
-  const getConnect = async () => {
-    try {
-      await clientPromise;
-      return {
-        props: { isConnected: true },
-      };
-    } catch (e) {
-      console.error(e);
-      return {
-        props: { isConnected: false },
-      };
-    }
-  }
+  // const getConnect = async () => {
+  //   try {
+  //     await clientPromise;
+  //     return {
+  //       props: { isConnected: true },
+  //     };
+  //   } catch (e) {
+  //     console.error(e);
+  //     return {
+  //       props: { isConnected: false },
+  //     };
+  //   }
+  // }
 
   useEffect(() => {
  
@@ -60,7 +61,7 @@ export default function Home({ isConnected }) {
 
   return (
     <div className="h-96">
-      {/* <Line data={pata} /> */}
+      <ChartLine data={pata} />
       <h2>Hello world</h2>
     </div>
   );
