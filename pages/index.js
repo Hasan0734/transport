@@ -44,22 +44,3 @@ export default function Home({ isConnected }) {
     </div>
   );
 }
-
-
-
-export async function getServerSideProps(context){
-  try{
-    await clientPromise
-
-    return {
-      props : {isConnected:true}
-    }
-  } catch (e){
-    console.error(e)
-    return{
-      props : {isConnected: false}
-    }
-  }
-
-
-}
